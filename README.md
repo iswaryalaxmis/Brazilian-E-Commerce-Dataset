@@ -113,3 +113,7 @@ Random Forest — highest accuracy and ROC-AUC, excellent balance of precision a
 - Improve delivery performance to reduce delays.
 
 - Enhance product images and descriptions to increase trust and loyalty.
+
+**Tech Stack**
+
+Python | Pandas | Scikit-learn | CatBoost | XGBoost | LightGBM | Matplotlib
