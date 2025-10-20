@@ -1,3 +1,8 @@
+Dataset - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
+
+<img width="2486" height="1496" alt="DBSchema" src="https://github.com/user-attachments/assets/6f6b87b4-4351-497c-a7d4-5c33bc4d1cba" />
+
+
 **Repeat Customer Prediction Model Summary**
 
 **Objective**
