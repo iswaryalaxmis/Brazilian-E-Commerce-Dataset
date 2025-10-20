@@ -3,7 +3,7 @@ Dataset - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce/data
 <img width="2486" height="1496" alt="DBSchema" src="https://github.com/user-attachments/assets/6f6b87b4-4351-497c-a7d4-5c33bc4d1cba" />
 
 
-**Repeat Customer Prediction Model Summary**
+# **Predicting Customer Loyalty: Repeat Purchase Model**
 
 **Objective**
 
@@ -14,14 +14,18 @@ This model enables data-driven decision-making in customer retention, marketing 
 **Feature Set**
 
 The model was trained using the following 15 features that capture product characteristics, customer behavior, delivery experience, and payment preferences:
-| Category                       | Feature                                                                             | Description / Role                                                                                      |
-| ------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-|  **Product Characteristics**   | `product_weight_g`, `product_length_cm`, `product_height_cm`, `product_width_cm`    | Physical dimensions of the product, influencing handling, cost, and repeat interest.                    |
-|  **Product Presentation**      | `product_photos_qty`, `product_description_lenght`, `product_category_name_english` | Product visibility and information quality; more photos and detailed descriptions build customer trust. |
-|  **Delivery & Logistics**      | `freight_value`, `delivery_time_days`, `delay_vs_estimate`                          | Indicators of shipping cost, speed, and reliability; delays often reduce repeat likelihood.             |
-|  **Customer Feedback**        | `review_score`                                                                      | Reflects customer satisfaction; higher ratings correlate strongly with repeat purchases.                |
-|  **Order Timing**           | `order_month`, `order_year`                                                         | Captures seasonality and purchasing patterns over time.                                                 |
-|  **Payment Behavior**        | `payment_type`, `payment_installments`                                              | Payment flexibility and method preferences that indicate loyalty behavior.                              |
+
+**Product Attributes:** product_weight_g, product_length_cm, product_height_cm, product_width_cm
+
+**Product Presentation:** product_photos_qty, product_description_lenght, product_category_name_english
+
+**Delivery & Logistics:** freight_value, delivery_time_days, delay_vs_estimate
+
+**Customer Feedback:** review_score
+
+**Order Timing:** order_month, order_year
+
+**Payment Behavior:** payment_type, payment_installments                           |
 
 
 
@@ -61,24 +65,24 @@ Random Forest — highest accuracy and ROC-AUC, excellent balance of precision a
 
 
 
-**Feature Importance (Top 10 Features)**
-| Rank | Feature                           | Importance | Interpretation                                                       |
-| ---- | --------------------------------- | ---------: | -------------------------------------------------------------------- |
-| 1    | **review_score**                  |     0.1506 | Higher satisfaction ratings strongly increase repeat likelihood.     |
-| 2    | **order_year**                    |     0.1393 | Indicates evolving customer loyalty trends across years.             |
-| 3    | **payment_type**                  |     0.1118 | Credit card and installment payments correlate with repeat behavior. |
-| 4    | **payment_installments**          |     0.0940 | Customers paying in installments are more engaged.                   |
-| 5    | **order_month**                   |     0.0890 | Seasonal variations affect repeat patterns.                          |
-| 6    | **product_photos_qty**            |     0.0520 | More product photos improve trust and return rates.                  |
-| 7    | **product_description_lenght**    |     0.0492 | Longer product descriptions improve customer confidence.             |
-| 8    | **delay_vs_estimate**             |     0.0444 | Fewer delivery delays lead to higher retention.                      |
-| 9    | **product_category_name_english** |     0.0443 | Certain product categories naturally drive loyalty.                  |
-| 10   | **product_weight_g**              |     0.0421 | Product size and weight may influence repeat potential.              |
+**Feature Importance (Top 5)**
 
+
+**review_score**— Strongest predictor; satisfied customers tend to return.
+
+**order_year** — Reflects evolving loyalty trends.
+
+**payment_type**— Credit card users more likely to repurchase.
+
+**payment_installments** — Flexible payments increase repeat probability.
+
+**order_month** — Seasonal variations affect repeat behavior.
 
 
 
 **Predicted Repeat Purchase Probabilities for New Customers**
+
+
 | Product Category          | Repeat Probability |
 | ------------------------- | -----------------: |
 | **furniture_decor**       |          **0.403** |
@@ -87,42 +91,25 @@ Random Forest — highest accuracy and ROC-AUC, excellent balance of precision a
 
 
 
-**Interpretation**
-
-Furniture & Decor and Health & Beauty show the highest repeat probabilities, suggesting strong customer satisfaction and trust.
+**New Customer Predictions**
 
 
-Arts & Craftsmanship has lower retention potential, indicating niche or infrequent purchases.
+| Product Category      | Repeat Probability |
+| --------------------- | -----------------: |
+| furniture_decor       |              0.403 |
+| health_beauty         |              0.386 |
+| arts_and_craftmanship |              0.125 |
 
 
+**Insight:** Furniture & decor and health & beauty have the highest repeat purchase likelihood.
 
 
-**Key Insights**
+**Business Applications**
 
-- Customer satisfaction (review_score) and payment flexibility are the strongest predictors of repeat buying.
+- Focus retention campaigns on high-repeat categories.
 
+- Personalize marketing based on payment type and engagement.
 
-- Operational excellence (on-time delivery, accurate estimates) significantly impacts retention.
+- Improve delivery performance to reduce delays.
 
-
-- Product presentation (photos, descriptions) enhances perceived reliability and encourages repeat purchases.
-
-
-- Seasonality and recency also influence repurchase behavior.
-
-
-
-
-**Business Implications**
-
-**Customer Retention:** Target high-repeat categories and satisfied customers with loyalty programs.
-
-
-**Marketing Strategy:** Personalize offers for customers using credit cards or installment payments.
-
-
-**Operations:** Reduce delivery delays to improve retention.
-
-
-**Product Strategy:** Invest in better product content (images, detailed descriptions) for long-term customer engagement.
-
+- Enhance product images and descriptions to increase trust and loyalty.
